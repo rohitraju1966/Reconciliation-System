@@ -1,6 +1,7 @@
 # Data Reconciliation Script
 
 ## Overview
+The repository consists of the Reconciliation Script code file (proof of concept) and the project report. 
 This Python script performs data reconciliation between two unordered datasets (Company Data and Government Data). It matches rows based on GST numbers and compares invoice numbers (and other fields) using a character-level similarity metric provided by the `fastwer` library. The script then produces an output Excel file containing:
 
 - Processed company data.
