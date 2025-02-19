@@ -54,7 +54,7 @@ df_1 = pd.read_csv("path_to_govt_data.csv")   # INSERT THE LINK TO GOVT DATA as 
 ```
 
 ### Adjust Column Names and Fields:
-When calling the `rows_columns_match()` function, make sure that you specify the correct column names for invoice and GST numbers, as well as the list of columns to reconcile. For example:
+When calling the `rows_columns_match()` function, make sure that you specify the correct column names for invoice and GST numbers, the other columns could have mismatched names. For example:
 ```python
 df_3, df_4, df_5 = rows_columns_match(
     df, df_1,
