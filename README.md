@@ -71,6 +71,11 @@ Execute the script. The results will be written to an Excel file named `DATA_out
 - **govt_data_new**: Reordered government data matched to company rows.
 - **reconciliation_sheet**: A field-by-field reconciliation status.
 
+## System Architecture
+Once the system is provided with the inputs, it will first reorder the columns of the GST portal data to match the ledger data, this is done by firstly, reordering a few rows in the GST portal data, following which, similarity is checked between columns using WER(word error rate) to pick the most similar columns and match them. The next step is to  reorder the rows of the GST portal data and this is done by performing a similarity check between rows of GST portal data and ledger data using WER and picking the most similar rows to match them. The reconciliation sheet is then prepared, by creating an empty sheet with the same column names and equal number of rows as the ledger data. After which, The sheet entries are filled with ‘reconciled’ if the entries of the ledger match the entries of the GST portal data and filled with ‘Mismatch error’ if the entries of the ledger do not match the entries of the GST portal data. The system design/ logic of the application is given below,
+
+![Reconciliation Process](reconciliation_diagram.png)
+
 ## Code Explanation
 ### 1. Data Preprocessing:
 - Reads the CSV files.
